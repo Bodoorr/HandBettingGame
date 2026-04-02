@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js" defer></script>
+    <title>Bet Game</title>
+  </head>
+  <body>
+    <a href="./home.html">Exit Game</a>
+    <div class="top-page">
+      <div class="status">
+        <p>Score</p>
+        <p id="score">0</p>
+      </div>
+
+      <div class="status">
+        <p>Round</p>
+        <p id="round">1</p>
+      </div>
+
+      <div class="status">
+        <p>Reshuffles</p>
+        <p id="reshuffle">0/3</p>
+      </div>
+    </div>
+
+    <section class="main">
+      <div class="hand">
+        <p>Current Hand</p>
+        <h3 id="hand-total"></h3>
+        <span>Your First, Bet on the next hand to begin.</span>
+        <div id="current-tiles"></div>
+        <section class="bet">
+          <div class="set-bet">
+            <p>Place Bet</p>
+            <h3>Will the next hand be higher or lower?</h3>
+            <div class="bet-buttons">
+              <button id="higher">Bet Higher</button>
+              <button id="lower">Bet Lower</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="deck">
+      <div class="deck-state">
+        <p>Deck State</p>
+        <div class="dr-status">
+          <p>Draw Pile</p>
+          <div id="draw">0</div>
+        </div>
+        <div class="di-status">
+          <p>Discard Pile</p>
+          <div id="discard">0</div>
+        </div>
+      </div>
+      <div class="s-pile">
+        <p>Special Tiles</p>
+        <div class="special-pile"></div>
+      </div>
+    </section>
+    <section class="history">
+      <p>History</p>
+      <h3>Previous Hands</h3>
+      <span class="empty"> No completed rounds yet.</span>
+    </section>
+  </body>
+</html>
