@@ -20,7 +20,7 @@ The game ends when any special tile reaches `0` or `10`, or when the reshuffle l
 
 ### **_Live Version_**
 
-#### [Play the game here]()
+#### [Play the game here](https://handbettinggame.up.railway.app)
 
 ---
 
