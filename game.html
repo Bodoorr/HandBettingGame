@@ -7,67 +7,75 @@
     <link rel="stylesheet" href="./style.css" />
     <title>Bet Game</title>
   </head>
-  <body>
-    <a href="./home.html">Exit Game</a>
-    <div class="top-page">
-      <div class="status">
-        <p>Score</p>
-        <p id="score">0</p>
+  <body class="game-page">
+    <div class="game-layout">
+      <a class="exit-link" href="./home.html">Exit Game</a>
+
+      <div class="top-page">
+        <div class="status">
+          <p>Score</p>
+          <p id="score">0</p>
+        </div>
+
+        <div class="status">
+          <p>Round</p>
+          <p id="round">1</p>
+        </div>
+
+        <div class="status">
+          <p>Reshuffles</p>
+          <p id="reshuffle">0/3</p>
+        </div>
       </div>
 
-      <div class="status">
-        <p>Round</p>
-        <p id="round">1</p>
-      </div>
+      <section class="s-pile">
+        <p>Special Tiles</p>
+        <div class="special-pile"></div>
+      </section>
 
-      <div class="status">
-        <p>Reshuffles</p>
-        <p id="reshuffle">0/3</p>
-      </div>
-    </div>
+      <section class="main">
+        <div class="hand">
+          <p>Current Hand</p>
+          <h3 id="hand-total"></h3>
+          <p id="result-message"></p>
 
-    <section class="main">
-      <div class="hand">
-        <p>Current Hand</p>
-        <h3 id="hand-total"></h3>
-        <p id="result-message"></p>
-        <div id="current-tiles"></div>
-        <section class="bet">
-          <div class="set-bet">
-            <p>Place Bet</p>
-            <h3>Will the next hand be higher or lower?</h3>
-            <div class="bet-buttons">
-              <button id="higher">Bet Higher</button>
-              <button id="lower">Bet Lower</button>
+          <div id="current-tiles"></div>
+
+          <section class="bet">
+            <div class="set-bet">
+              <p>Place Bet</p>
+              <h3>Will the next hand be higher or lower?</h3>
+              <div class="bet-buttons">
+                <button id="higher">Bet Higher</button>
+                <button id="lower">Bet Lower</button>
+              </div>
             </div>
-          </div>
-        </section>
-      </div>
-    </section>
+          </section>
+        </div>
+      </section>
 
-    <section class="deck">
-      <div class="deck-state">
+      <section class="deck-state">
         <p>Deck State</p>
+
         <div class="dr-status">
           <p>Draw Pile</p>
           <div id="draw">0</div>
         </div>
+
         <div class="di-status">
           <p>Discard Pile</p>
           <div id="discard">0</div>
         </div>
-      </div>
-      <div class="s-pile">
-        <p>Special Tiles</p>
-        <div class="special-pile"></div>
-      </div>
-    </section>
-    <section class="history">
-      <p>History</p>
-      <h3>Previous Hands</h3>
-      <div id="previous-tiles"></div>
-      <span class="empty"> No completed rounds yet.</span>
-    </section>
+      </section>
+
+      <section class="history">
+        <p>History</p>
+        <h3>Previous Hands</h3>
+        <div id="previous-tiles"></div>
+        <span class="empty">No completed rounds yet.</span>
+      </section>
+    </div>
+
     <div id="game-over" class="game-over hidden">
       <div class="game-over-box">
         <h2>Game Over</h2>

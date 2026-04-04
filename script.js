@@ -1,42 +1,287 @@
 const tiles = [
-  { type: "bamboo", value: 1 },
-  { type: "bamboo", value: 2 },
-  { type: "bamboo", value: 3 },
-  { type: "bamboo", value: 4 },
-  { type: "bamboo", value: 5 },
-  { type: "bamboo", value: 6 },
-  { type: "bamboo", value: 7 },
-  { type: "bamboo", value: 8 },
-  { type: "bamboo", value: 9 },
+  {
+    type: "bamboo",
+    value: 1,
+    code: "B1",
+    symbol: "1",
+    label: "Bamboo",
+    color: "green",
+  },
+  {
+    type: "bamboo",
+    value: 2,
+    code: "B2",
+    symbol: "2",
+    label: "Bamboo",
+    color: "green",
+  },
+  {
+    type: "bamboo",
+    value: 3,
+    code: "B3",
+    symbol: "3",
+    label: "Bamboo",
+    color: "green",
+  },
+  {
+    type: "bamboo",
+    value: 4,
+    code: "B4",
+    symbol: "4",
+    label: "Bamboo",
+    color: "green",
+  },
+  {
+    type: "bamboo",
+    value: 5,
+    code: "B5",
+    symbol: "5",
+    label: "Bamboo",
+    color: "green",
+  },
+  {
+    type: "bamboo",
+    value: 6,
+    code: "B6",
+    symbol: "6",
+    label: "Bamboo",
+    color: "green",
+  },
+  {
+    type: "bamboo",
+    value: 7,
+    code: "B7",
+    symbol: "7",
+    label: "Bamboo",
+    color: "green",
+  },
+  {
+    type: "bamboo",
+    value: 8,
+    code: "B8",
+    symbol: "8",
+    label: "Bamboo",
+    color: "green",
+  },
+  {
+    type: "bamboo",
+    value: 9,
+    code: "B9",
+    symbol: "9",
+    label: "Bamboo",
+    color: "green",
+  },
 
-  { type: "characters", value: 1 },
-  { type: "characters", value: 2 },
-  { type: "characters", value: 3 },
-  { type: "characters", value: 4 },
-  { type: "characters", value: 5 },
-  { type: "characters", value: 6 },
-  { type: "characters", value: 7 },
-  { type: "characters", value: 8 },
-  { type: "characters", value: 9 },
+  {
+    type: "characters",
+    value: 1,
+    code: "C1",
+    symbol: "萬",
+    label: "Characters",
+    color: "red",
+  },
+  {
+    type: "characters",
+    value: 2,
+    code: "C2",
+    symbol: "萬",
+    label: "Characters",
+    color: "red",
+  },
+  {
+    type: "characters",
+    value: 3,
+    code: "C3",
+    symbol: "萬",
+    label: "Characters",
+    color: "red",
+  },
+  {
+    type: "characters",
+    value: 4,
+    code: "C4",
+    symbol: "萬",
+    label: "Characters",
+    color: "red",
+  },
+  {
+    type: "characters",
+    value: 5,
+    code: "C5",
+    symbol: "萬",
+    label: "Characters",
+    color: "red",
+  },
+  {
+    type: "characters",
+    value: 6,
+    code: "C6",
+    symbol: "萬",
+    label: "Characters",
+    color: "red",
+  },
+  {
+    type: "characters",
+    value: 7,
+    code: "C7",
+    symbol: "萬",
+    label: "Characters",
+    color: "red",
+  },
+  {
+    type: "characters",
+    value: 8,
+    code: "C8",
+    symbol: "萬",
+    label: "Characters",
+    color: "red",
+  },
+  {
+    type: "characters",
+    value: 9,
+    code: "C9",
+    symbol: "萬",
+    label: "Characters",
+    color: "red",
+  },
 
-  { type: "dots", value: 1 },
-  { type: "dots", value: 2 },
-  { type: "dots", value: 3 },
-  { type: "dots", value: 4 },
-  { type: "dots", value: 5 },
-  { type: "dots", value: 6 },
-  { type: "dots", value: 7 },
-  { type: "dots", value: 8 },
-  { type: "dots", value: 9 },
+  {
+    type: "dots",
+    value: 1,
+    code: "D1",
+    symbol: "●",
+    label: "Dots",
+    color: "blue",
+  },
+  {
+    type: "dots",
+    value: 2,
+    code: "D2",
+    symbol: "●●",
+    label: "Dots",
+    color: "blue",
+  },
+  {
+    type: "dots",
+    value: 3,
+    code: "D3",
+    symbol: "●●●",
+    label: "Dots",
+    color: "blue",
+  },
+  {
+    type: "dots",
+    value: 4,
+    code: "D4",
+    symbol: "●●●●",
+    label: "Dots",
+    color: "blue",
+  },
+  {
+    type: "dots",
+    value: 5,
+    code: "D5",
+    symbol: "●●●●●",
+    label: "Dots",
+    color: "blue",
+  },
+  {
+    type: "dots",
+    value: 6,
+    code: "D6",
+    symbol: "●●●●●●",
+    label: "Dots",
+    color: "blue",
+  },
+  {
+    type: "dots",
+    value: 7,
+    code: "D7",
+    symbol: "●●●●●●●",
+    label: "Dots",
+    color: "blue",
+  },
+  {
+    type: "dots",
+    value: 8,
+    code: "D8",
+    symbol: "●●●●●●●●",
+    label: "Dots",
+    color: "blue",
+  },
+  {
+    type: "dots",
+    value: 9,
+    code: "D9",
+    symbol: "●●●●●●●●●",
+    label: "Dots",
+    color: "blue",
+  },
 
-  { type: "wind", name: "east", value: 5 },
-  { type: "wind", name: "south", value: 5 },
-  { type: "wind", name: "west", value: 5 },
-  { type: "wind", name: "north", value: 5 },
+  {
+    type: "wind",
+    name: "east",
+    value: 5,
+    code: "E",
+    symbol: "東",
+    label: "East Wind",
+    color: "blue",
+  },
+  {
+    type: "wind",
+    name: "south",
+    value: 5,
+    code: "S",
+    symbol: "南",
+    label: "South Wind",
+    color: "blue",
+  },
+  {
+    type: "wind",
+    name: "west",
+    value: 5,
+    code: "W",
+    symbol: "西",
+    label: "West Wind",
+    color: "blue",
+  },
+  {
+    type: "wind",
+    name: "north",
+    value: 5,
+    code: "N",
+    symbol: "北",
+    label: "North Wind",
+    color: "blue",
+  },
 
-  { type: "dragon", name: "red", value: 5 },
-  { type: "dragon", name: "green", value: 5 },
-  { type: "dragon", name: "white", value: 5 },
+  {
+    type: "dragon",
+    name: "red",
+    value: 5,
+    code: "R",
+    symbol: "中",
+    label: "Red Dragon",
+    color: "red",
+  },
+  {
+    type: "dragon",
+    name: "green",
+    value: 5,
+    code: "G",
+    symbol: "發",
+    label: "Green Dragon",
+    color: "green",
+  },
+  {
+    type: "dragon",
+    name: "white",
+    value: 5,
+    code: "Wh",
+    symbol: "□",
+    label: "White Dragon",
+    color: "blue",
+  },
 ];
 
 const specialNames = [
@@ -75,6 +320,7 @@ const gameState = {
   prevHandValues: [],
   resultMessage: "",
   prevResult: "",
+  endMessage: "",
   scoreSaved: false,
   specialValues: createSpecialValues(),
 };
@@ -150,13 +396,26 @@ const updateDeckDisplay = () => {
   if (reshuffleDisplay) reshuffleDisplay.innerText = `${gameState.reshuffle}/3`;
   if (resultMessageDisplay)
     resultMessageDisplay.innerText = gameState.resultMessage;
-
   if (specialPile) {
     specialPile.innerHTML = "";
+
     specialNames.forEach((name) => {
-      const div = document.createElement("div");
-      div.innerText = `${name}(${gameState.specialValues[name]})`;
-      specialPile.appendChild(div);
+      const tile = tiles.find(
+        (item) =>
+          (item.type === "wind" || item.type === "dragon") &&
+          item.name === name,
+      );
+
+      if (!tile) return;
+
+      specialPile.innerHTML += `
+      <div class="tile tile-small ${tile.color}">
+        <span class="tile-code">${tile.code}</span>
+        <span class="tile-symbol">${tile.symbol}</span>
+        <span class="tile-label">${tile.label}</span>
+        <span class="tile-points">${gameState.specialValues[name]}</span>
+      </div>
+    `;
     });
   }
 };
@@ -167,14 +426,20 @@ const updateCurrentHand = () => {
   currentHandTile.innerHTML = "";
 
   gameState.currentHand.forEach((tile) => {
-    const tileDiv = document.createElement("div");
-    tileDiv.classList.add("tile");
+    const shownValue =
+      tile.type === "wind" || tile.type === "dragon"
+        ? gameState.specialValues[tile.name]
+        : tile.value;
 
-    if (tile.name) {
-      tileDiv.innerText = `${tile.name} (${gameState.specialValues[tile.name]})`;
-    } else {
-      tileDiv.innerText = `${tile.type} (${tile.value})`;
-    }
+    const tileDiv = document.createElement("div");
+    tileDiv.classList.add("tile", tile.color);
+
+    tileDiv.innerHTML = `
+      <span class="tile-code">${tile.code}</span>
+      <span class="tile-symbol">${tile.symbol}</span>
+      <span class="tile-label">${tile.label}</span>
+      <span class="tile-points">${shownValue}</span>
+    `;
 
     currentHandTile.appendChild(tileDiv);
   });
@@ -200,30 +465,41 @@ const updateHistory = () => {
   resultDiv.innerText = gameState.prevResult === "win" ? "Win" : "Loss";
   handDiv.appendChild(resultDiv);
 
+  const tilesWrap = document.createElement("div");
+  tilesWrap.classList.add("history-tiles");
+
   gameState.prevHand.forEach((tile, index) => {
     const tileDiv = document.createElement("div");
-    tileDiv.classList.add("tile");
+    tileDiv.classList.add("tile", "tile-small", tile.color);
 
-    if (tile.name) {
-      tileDiv.innerText = `${tile.name} (${gameState.prevHandValues[index]})`;
-    } else {
-      tileDiv.innerText = `${tile.type} (${gameState.prevHandValues[index]})`;
-    }
+    tileDiv.innerHTML = `
+      <span class="tile-code">${tile.code}</span>
+      <span class="tile-symbol">${tile.symbol}</span>
+      <span class="tile-label">${tile.label}</span>
+      <span class="tile-points">${gameState.prevHandValues[index]}</span>
+    `;
 
-    handDiv.appendChild(tileDiv);
+    tilesWrap.appendChild(tileDiv);
   });
+
+  handDiv.appendChild(tilesWrap);
 
   const totalPrevHand = document.createElement("div");
   totalPrevHand.classList.add("prevhand-total");
   totalPrevHand.innerText = `Total: ${gameState.prevTotal}`;
   handDiv.appendChild(totalPrevHand);
 
-  prevHandTile.appendChild(handDiv);
+  prevHandTile.prepend(handDiv);
+
+  const oldHands = prevHandTile.querySelectorAll(".prev-hand");
+  if (oldHands.length > 5) {
+    oldHands[oldHands.length - 1].remove();
+  }
 };
 
 const showGameOver = () => {
   if (gameOverDisplay && gameOverText) {
-    gameOverText.innerText = `Final Score: ${gameState.score}`;
+    gameOverText.innerText = `${gameState.endMessage} Final Score: ${gameState.score}`;
     gameOverDisplay.classList.remove("hidden");
   }
 };
@@ -260,13 +536,17 @@ const calculateHandTotal = () => {
 
 const checkGameOver = () => {
   let tileEnd = false;
+  let flag = false;
 
   specialNames.forEach((name) => {
-    if (
-      gameState.specialValues[name] === 0 ||
-      gameState.specialValues[name] === 10
-    ) {
+    if (gameState.specialValues[name] === 0) {
       tileEnd = true;
+      flag = false;
+    }
+
+    if (gameState.specialValues[name] === 10) {
+      tileEnd = true;
+      flag = true;
     }
   });
 
@@ -274,7 +554,7 @@ const checkGameOver = () => {
 
   if (tileEnd || reshuffleLimit) {
     gameState.gameOver = true;
-
+    gameState.endMessage = flag || reshuffleLimit ? "You won." : "You lost.";
     if (!gameState.scoreSaved) {
       saveScore();
       gameState.scoreSaved = true;
@@ -378,6 +658,7 @@ const initializeGame = () => {
   gameState.resultMessage = "";
   gameState.prevResult = "";
   gameState.scoreSaved = false;
+  gameState.endMessage = "";
   gameState.specialValues = createSpecialValues();
 
   if (prevHandTile) {
