@@ -1,3 +1,4 @@
+// all game tiles
 const tiles = [
   {
     type: "bamboo",
@@ -284,6 +285,7 @@ const tiles = [
   },
 ];
 
+// names of honor tiles.
 const specialNames = [
   "east",
   "south",
@@ -294,6 +296,7 @@ const specialNames = [
   "white",
 ];
 
+// default values for honor tiles
 const createSpecialValues = () => ({
   east: 5,
   south: 5,
@@ -304,6 +307,7 @@ const createSpecialValues = () => ({
   white: 5,
 });
 
+// game state used to track score, deck, hands, betting and end game status.
 const gameState = {
   score: 0,
   round: 1,
@@ -325,6 +329,7 @@ const gameState = {
   specialValues: createSpecialValues(),
 };
 
+// DOM references for updating the UI during the game
 const scoreDisplay = document.getElementById("score");
 const roundDisplay = document.getElementById("round");
 const reshuffleDisplay = document.getElementById("reshuffle");
@@ -341,6 +346,7 @@ const gameOverDisplay = document.getElementById("game-over");
 const gameOverText = document.getElementById("game-over-text");
 const playAgainButton = document.getElementById("play-again");
 
+// save the score to localStorage and preview the top 5 scores
 const saveScore = () => {
   let scores = localStorage.getItem("topScores");
 
@@ -357,6 +363,7 @@ const saveScore = () => {
   localStorage.setItem("topScores", scores.join(","));
 };
 
+// get saved scores from localStorage and show them on the home page
 const showLeaderboard = () => {
   const topGames = document.getElementById("top-games");
   const empty = document.getElementById("empty");
@@ -387,6 +394,7 @@ const showLeaderboard = () => {
   });
 };
 
+// update all game information displays
 const updateDeckDisplay = () => {
   if (drawPileDisplay) drawPileDisplay.innerText = gameState.drawPile.length;
   if (discardPileDisplay)
@@ -420,6 +428,7 @@ const updateDeckDisplay = () => {
   }
 };
 
+// show the current hand tiles and update the hand total
 const updateCurrentHand = () => {
   if (!currentHandTile) return;
 
@@ -449,6 +458,7 @@ const updateCurrentHand = () => {
   }
 };
 
+// add the previous hand to the history and keep the latest 5 rounds
 const updateHistory = () => {
   if (!prevHandTile) return;
 
@@ -497,6 +507,7 @@ const updateHistory = () => {
   }
 };
 
+// show the game over box with the final result message
 const showGameOver = () => {
   if (gameOverDisplay && gameOverText) {
     gameOverText.innerText = `${gameState.endMessage} Final Score: ${gameState.score}`;
@@ -504,11 +515,13 @@ const showGameOver = () => {
   }
 };
 
+// reload the main game UI after state changes
 const loadGame = () => {
   updateDeckDisplay();
   updateCurrentHand();
 };
 
+// randomize the order of the tiles in the draw pile
 const shuffleDeck = () => {
   for (let i = gameState.drawPile.length - 1; i > 0; i--) {
     let random = Math.floor(Math.random() * (i + 1));
@@ -518,6 +531,7 @@ const shuffleDeck = () => {
   }
 };
 
+// calculate the total value of the current hand, including honor tile values
 const calculateHandTotal = () => {
   gameState.handTotal = 0;
 
@@ -534,6 +548,7 @@ const calculateHandTotal = () => {
   }
 };
 
+// check if the game ended because a special tile hit 0 or 10, or the reshuffle limit was reached
 const checkGameOver = () => {
   let tileEnd = false;
   let flag = false;
@@ -564,6 +579,7 @@ const checkGameOver = () => {
   }
 };
 
+// rebuild and shuffle the draw pile when it is empty, and increase the reshuffle count
 const reshuffleDeck = () => {
   if (gameState.drawPile.length === 0 && gameState.discardPile.length > 0) {
     let freshDeck = [];
@@ -581,6 +597,7 @@ const reshuffleDeck = () => {
   }
 };
 
+// draw a new hand of 4 tiles from the draw pile
 const drawHand = () => {
   gameState.currentHand = [];
 
@@ -596,6 +613,7 @@ const drawHand = () => {
   }
 };
 
+// compare the new hand with the previous hand to see if the player won or lost the bet
 const compareHand = () => {
   if (gameState.prevHand.length === 0 || gameState.currentBet === null) return;
 
@@ -617,6 +635,7 @@ const compareHand = () => {
   gameState.currentBet = null;
 };
 
+// update honor tile values after a round based on whether the player won or lost
 const updateSpecialTileValues = () => {
   gameState.currentHand.forEach((tile) => {
     if (tile.type === "wind" || tile.type === "dragon") {
@@ -641,6 +660,7 @@ const updateSpecialTileValues = () => {
   calculateHandTotal();
 };
 
+// reset the full game state and start a new game
 const initializeGame = () => {
   gameState.score = 0;
   gameState.round = 1;
@@ -679,6 +699,7 @@ const initializeGame = () => {
   loadGame();
 };
 
+// play one full round and update the game state and UI
 const playHand = () => {
   if (gameState.gameOver || gameState.currentBet === null) return;
 
@@ -713,6 +734,7 @@ const playHand = () => {
   loadGame();
 };
 
+// if the Higher button is clicked, set the bet to higher and play a hand
 if (betHigher) {
   betHigher.addEventListener("click", () => {
     gameState.currentBet = "higher";
@@ -720,23 +742,26 @@ if (betHigher) {
   });
 }
 
+// if the Lower button is clicked, set the bet to lower and play a hand
 if (betLower) {
   betLower.addEventListener("click", () => {
     gameState.currentBet = "lower";
     playHand();
   });
 }
-
+// if the Play Again button is clicked, start a new game
 if (playAgainButton) {
   playAgainButton.addEventListener("click", () => {
     initializeGame();
   });
 }
 
+// if the current tiles element exists, start the game
 if (document.getElementById("current-tiles")) {
   initializeGame();
 }
 
+// if the top games element exists, show the leaderboard
 if (document.getElementById("top-games")) {
   showLeaderboard();
 }
